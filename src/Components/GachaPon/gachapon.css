@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    font-family: "Press Start 2P", system-ui;
+    background-color: #1d3f11;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+
+h1 {
+    color: #3b5704;
+    text-shadow: 3px 3px #99CC33;
+    margin-bottom: 10px;
+}
+
+.contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 0;
+}
+
+
+#barra-superior {
+    position: fixed;
+    top: 2vh;
+    height: 8vh;
+    z-index: 1000; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90vw;
+    max-width: 90vw;
+    height: 7vh;
+    max-height: 7vh;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    background-color: rgb(40, 96, 19);
+}
+
+
+.icono-barra {
+    height: 10vh;
+    filter: drop-shadow(0 0 5px rgba(29, 63, 17, 1));
+}
+
+#user-icon {
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+#user-icon:hover {
+    opacity: 0.8;
+    transform: translateY(2px);
+    transition: opacity, transform 0.3s ease-in-out;
+
+}
+
+#user-icon:active {
+    transform: translateY(4px);
+    opacity: 1;  
+}
+
+#daro-point {
+    transform: scale(1.1);
+}
+
+.puntajes {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.grupo-puntajes {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+#score {
+    color: #fff365;
+    font-size: 3vh;
+    text-shadow: 2px 2px #0000007a;
+}
+
+#coins {
+    color: #3cb60b;
+    font-size: 3vh;
+    text-shadow: 2px 2px #0000007a;
+}
+
+/*Area del Gachapon*/
+#area-gachapon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    min-height: 80vh; /*calc(100vh - 10vh);  100vh menos altura de la barra */
+    /* Para la barra superior */
+    overflow: hidden;
+    position: relative;
+}
+
+#gachapon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    z-index: 400;
+}
+
+#gachapon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    height: 100%;
+    position: relative;
+}
+
+#gacha-machine {
+    height: 75vh; 
+    max-height: 80vh;
+    filter: drop-shadow(0 0 10px rgb(15, 34, 8, 0.75));
+    margin-bottom: -50px;
+    margin-top: -50px;
+    margin-left: -250px;
+    margin-right: -250px;
+}
+#gachapon button {
+    margin-bottom: 4vh;
+    margin-top: 2vh;
+    padding: 2vh 4vw;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2vh;
+    background-color: #f0c040;
+    text-shadow: 3px 3px #b18200a9;
+    box-shadow: 0 0 10px rgba(63, 136, 37, 0.5);
+    border: none;
+    border-radius: 0.5vh;
+    cursor: pointer;
+    position: relative; 
+    width: auto;
+    z-index: 500;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover cuando el botón está habilitado */
+#gachapon button:not(:disabled):hover {
+    background-color: #e0b030;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transform: translateY(2px); 
+  }
+  
+  /* Estilo cuando el botón está deshabilitado */
+  #gachapon button:disabled {
+    background-color: #d3d3d3; 
+    text-shadow: 3px 3px #9e9e9ec2;
+    color: #555;
+    cursor: not-allowed;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Hover cuando el botón está deshabilitado */
+  #gachapon button:disabled:hover {
+    background-color: #ff6b6b; 
+    text-shadow: 3px 3px #c43b3bbd;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+    transform: translateY(2px);
+  }
+
+  #gachapon button:active {
+    transform: translateY(4px);  
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    background-color: #d0a030;  
+}
+
+.nubes {
+    height: 40vh;
+    position: absolute;
+    z-index: 200;
+    filter: drop-shadow(0 0 5px rgb(15, 34, 8, 0.5));
+    
+}
+
+.nubes-izquierda {
+    right: 20%;
+    top: 15%;
+}
+
+.nubes-derecha {
+    left: 20%;
+    top: 15%;
+    transform: scaleX(-1);
+}
+
+/* Ajustes para pantallas más pequeñas */
+@media (max-width: 768px) {
+    #barra-superior {
+        padding: 8px 10px;
+    }
+    
+    .icono-barra {
+        height: 6vh;
+    }
+    
+    .puntajes {
+        gap: 5px;
+    }
+    
+    #score, #coins {
+        font-size: 1.5vh;
+    }
+
+    #gacha-machine {
+        height: 60vh;
+    }
+    
+    #gachapon button {
+        padding: 1.5vh 5vw;
+        font-size: 1.8vh;
+    }
+    
+    .nubes {
+        height: 30vh;
+        opacity: 0.6;
+        top: 40%;
+        animation: none !important;
+        transition: none !important;
+    }
+    
+    .nubes-izquierda {
+        scale: 0.8;
+        transform: translateY(-50%) translateX(-50%);
+    }
+    
+    .nubes-derecha {
+        scale: 0.8;
+        transform: translateY(-50%) translateX(50%) scaleX(-1);
+    }
+}
+
+/* Ajustes para pantallas muy grandes */
+@media (min-width: 1200px) {
+    #gacha-machine {
+        height: 80vh;
+    }
+}

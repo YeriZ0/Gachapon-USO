@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.recompensa-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  opacity: 0;
+  transform: scale(1.5);
+  image-rendering: pixelated;
+}
+
+.recompensa-modal.entrar {
+  animation: modal-entrada 0.3s forwards;
+}
+
+@keyframes modal-entrada {
+  0% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.recompensa-modal.salir {
+  animation: modal-salida 0.3s forwards;
+}
+
+@keyframes modal-salida {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+
+.recompensa-contenido {
+  padding: 1.5rem;
+  text-align: center;
+  font-family: 'Press Start 2P', system-ui;
+  image-rendering: pixelated;
+  line-height: 1.3 !important;
+  overflow-wrap: break-word;
+  word-break: keep-all;
+  max-width: 28rem;
+  margin: 0 auto;
+  font-size: 0.9rem;
+}
+
+.recompensa-contenido h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  text-shadow: 4px 4px #1d3f11;
+}
+
+.recompensa-contenido p {
+  margin: 1.5rem 0;
+  color: #ffffff;
+  text-shadow: 4px 4px #1d3f11;
+  font-size: 0.9rem;
+}
+
+.recompensa-contenido p,
+.recompensa-contenido h2 {
+  max-width: 26rem;   
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.recompensa-contenido button {
+  margin-top: 1.5rem;
+  padding: 0.8rem 1.6rem;
+  background-color: #f0c040;
+  text-shadow: 3px 3px #b18200a9;
+  box-shadow: 0 0 10px rgba(63, 136, 37, 0.5);
+  border: none;
+  border-radius: 0.5vh;
+  font-family: 'Press Start 2P', cursive;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: all 0.2s;
+}
+
+.recompensa-contenido button:hover {
+  background-color: #e0b030;
+  transform: translateY(-2px);
+}
+
+.recompensa-contenido button:active {
+  transform: translateY(4px);  
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  background-color: #d0a030;  
+}
+
+@media (max-width: 480px) {
+  .recompensa-contenido {
+    font-size: 0.65rem;
+    max-width: 95vw;
+    padding: 1rem;
+  }
+
+  .recompensa-contenido h2 {
+    font-size: 0.95rem;
+  }
+
+  .recompensa-contenido button {
+    font-size: 0.7rem;
+    padding: 0.6rem 1rem;
+  }
+}
