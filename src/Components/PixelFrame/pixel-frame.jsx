@@ -1,4 +1,3 @@
-import React from "react";
 import "./pixel-frame.css";
 
 // Importación de imágenes

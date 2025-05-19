@@ -51,7 +51,7 @@ const RecompensaModal = React.memo(({rarity, points, onClose }) => {
         <div className="recompensa-contenido">
           <h2 style={{ 
             color: recompensaData.color1,
-            textShadow: `3px 3px ${recompensaData.color2}`
+            textShadow: `2px 2px ${recompensaData.color2}`
           }}>
             {recompensaData.encabezado}
           </h2>

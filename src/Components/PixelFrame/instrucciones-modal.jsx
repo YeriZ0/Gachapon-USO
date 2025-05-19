@@ -14,7 +14,7 @@ const InstruccionesModal = React.memo(({ onClose }) => {
     }, [onClose]);
 
     return (
-        <div className={`instrucciones-modal ${closing ? "salir" : "entrar"}`}>
+        <div className={`instrucciones-modal ${closing ? "salir" : ""}`}>
             <PixelFrame>
                 <div className="instrucciones-contenido">
                     <h1>¡Bienvenido al gachapón!</h1>

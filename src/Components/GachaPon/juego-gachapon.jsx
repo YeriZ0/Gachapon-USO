@@ -1,9 +1,10 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import "./gachapon.css";
 import GachaponAnimation from "./gachapon-animacion.jsx";
 import RecompensaModal from "../PixelFrame/custom-modal.jsx";
 import InstruccionesModal from "../PixelFrame/instrucciones-modal.jsx";
-import { useUISounds, useRewardSounds, useAudioControls } from '../../hooks/useSound.js';
+import VolumenControl from '../Sonidos/volumen-control.jsx';
+import { useUISounds, useRewardSounds } from '../../hooks/useSound.js';
 
 import iconUsuario from "../../assets/Usuario.png";
 import iconDaro from "../../assets/Daro Points.png";
@@ -23,9 +24,9 @@ const Gachapon = () => {
   const [recompensaActual, setRecompensaActual] = useState(null);
   const gachaMachineRef = useRef(null);
   const [mostrarInstrucciones, setMostrarInstrucciones] = useState(true);
-  const { playCoin } = useUISounds();
+  const { playCoin, playButton } = useUISounds();
   const { playCommon, playEpic, playLegendary } = useRewardSounds();
-  const { toggleMute, isSoundMuted } = useAudioControls();
+  
 
   const handleAnimationChange = (state, reward) => {
     const gachaMachine = gachaMachineRef.current;
@@ -95,7 +96,8 @@ const Gachapon = () => {
   });
 
   const handlePlay = () => {
-    playCoin(); //Sonido de moneda
+    playButton();
+    playCoin(); 
     play(coins);
   };
 
@@ -111,15 +113,9 @@ const Gachapon = () => {
         <InstruccionesModal onClose={() => setMostrarInstrucciones(false)} />
       )}
       <div id="barra-superior">
-        <div id="Usuario">
+        <div id="Menu">
           <img id="user-icon" className="icono-barra" src={iconUsuario} alt="Usuario" />
         </div>
-        <button 
-          onClick={toggleMute}
-          style={{position: 'absolute', top: '30px', left: '130px'}}
-        >
-          {isSoundMuted ? '🔇' : '🔊'}
-        </button>
         <div id="puntajes" className="puntajes">
           <div className="grupo-puntajes">
             <img id="daro-point" className="icono-barra" src={iconDaro} alt="Daro Points" />
@@ -130,6 +126,9 @@ const Gachapon = () => {
             <span id="coins">{coins}</span>
           </div>
         </div>
+      </div>
+      <div id="barra-secundaria">
+        <VolumenControl />
       </div>
       
       

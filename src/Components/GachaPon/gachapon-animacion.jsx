@@ -1,15 +1,15 @@
-import React, { useState, useEffect, useMemo, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 const GachaponAnimation = ({ onUpdateCoins, onUpdateScore, onAnimationChange, onFinishAnimation }) => {
   const [animationState, setAnimationState] = useState('idle');
   const [currentReward, setCurrentReward] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
-  const rewards = useMemo(() => [
-    { rarity: "Comun", chance: 5, points: 10, duration: 5000 },
-    { rarity: "Epico", chance: 5, points: 70, duration: 6000 },
-    { rarity: "Legendario", chance: 90, points: 200, duration: 14000 }
-  ], []);
+  const rewards = [
+    { rarity: "Comun", chance: 1, points: 10, duration: 5000 },
+    { rarity: "Epico", chance: 1, points: 70, duration: 6000 },
+    { rarity: "Legendario", chance: 100, points: 200, duration: 14000 }
+  ];
 
   useEffect(() => {
     if (onAnimationChange) {

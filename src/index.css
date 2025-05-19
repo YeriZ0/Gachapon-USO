@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 :root {
   font-family: "Press Start 2P", system-ui;
@@ -6,13 +6,25 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: rgba(0, 0, 0, 0.87);
   background-color: #242424;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+:root::selection {
+  background: #f0c040;
+  color: #1d3f11;
+  text-shadow: none;
+}
+
+:root::-moz-selection {
+  background: #f0c040;
+  color: #1d3f11;
+  text-shadow: none;
 }
 
 a {

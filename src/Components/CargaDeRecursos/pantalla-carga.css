@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.pantalla-carga {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1d3f11;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.pantalla-carga.entrar {
+    animation: pantallaEntrada 0.5s forwards;
+}
+
+@keyframes pantallaEntrada {
+    0% {
+        opacity: 0;
+        transform: scale(1.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.pantalla-carga.salir {
+    animation: pantallaSalida 0.5s forwards;
+}
+
+@keyframes pantallaSalida {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.5);
+    }
+}
+
+.pantalla-carga-contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.cargando-gif {
+    width: 40vw;
+    height: 40vw;
+    max-width: 45vh;
+    max-height: 45vh;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+}
+
+.cargando-texto {
+    font-family: 'Press Start 2P', system-ui;
+    background-color: #1d3f11;
+    color: #ffffff;
+    text-shadow: 4px 4px #1d3f11;
+    font-size: 1.8dvh;
+    text-align: center;
+    animation: parpadeo 1.25s infinite steps(1);
+}
+
+.cargando-texto.todo-listo {
+    color: #f0c040;
+    text-shadow: 2px 2px #b18200a9;
+    animation: parpadeo 1.25s infinite steps(2);
+    opacity: 1;
+}
+
+@keyframes parpadeo {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+  25% { opacity: 0.8; }
+  75% { opacity: 0.8; }
+}
+

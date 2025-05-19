@@ -6,7 +6,8 @@ export const useUISounds = () => {
     return {
         playButton: () => audio.playSound('ui', 'button'),
         playCoin: () => audio.playSound('ui', 'coin'),
-        playMenu: () => audio.playSound('ui', 'menu')
+        playMenu: () => audio.playSound('ui', 'menu'),
+        playVolume: () => audio.playSound('ui', 'volumeAlert')
     };
 };
 
@@ -33,7 +34,6 @@ export const useAudioControls = () => {
         stopCurrentReward: () => audio.stopCurrentReward(),
         setVolume: (volume) => audio.setVolume(volume),
         toggleMute: () => audio.toggleMute(),
-        isMuted: audio.isMuted,
         playBGSound: () => audio.playBackgroundSound(),
         stopBGSound: () => audio.stopBackgroundSound()
     };

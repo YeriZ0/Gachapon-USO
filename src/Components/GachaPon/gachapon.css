@@ -25,11 +25,11 @@ h1 {
 }
 
 
-#barra-superior {
+#barra-superior{
     position: fixed;
     top: 2vh;
     height: 8vh;
-    z-index: 1000; 
+    z-index: 999; 
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -43,25 +43,37 @@ h1 {
     background-color: rgb(40, 96, 19);
 }
 
+#barra-secundaria {
+    position: fixed;
+    top: 15vh;
+    z-index: 998;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 83vw;
+    max-width: 83vw;
+    transform: scale(1.1);
+}
+
 
 .icono-barra {
     height: 10vh;
     filter: drop-shadow(0 0 5px rgba(29, 63, 17, 1));
 }
 
-#user-icon {
+#user-icon, #volumen-icon {
     cursor: pointer;
     transition: transform 0.3s ease-in-out;
 }
 
-#user-icon:hover {
+#user-icon:hover, #volumen-icon:hover {
     opacity: 0.8;
     transform: translateY(2px);
     transition: opacity, transform 0.3s ease-in-out;
 
 }
 
-#user-icon:active {
+#user-icon:active, #volumen-icon:active {
     transform: translateY(4px);
     opacity: 1;  
 }
@@ -139,6 +151,7 @@ h1 {
     padding: 2vh 4vw;
     font-family: 'Press Start 2P', cursive;
     font-size: 2vh;
+    color: #000000;
     background-color: #f0c040;
     text-shadow: 3px 3px #b18200a9;
     box-shadow: 0 0 10px rgba(63, 136, 37, 0.5);
@@ -190,20 +203,44 @@ h1 {
 }
 
 .nubes-izquierda {
-    right: 20%;
+    left: 12vw;
     top: 15%;
 }
 
 .nubes-derecha {
-    left: 20%;
+    right: 12vw;
     top: 15%;
     transform: scaleX(-1);
+}
+
+
+@media (max-width: 1400px) {
+    .nubes-izquierda {
+    left: 5vw;
+    top: 15%;
+    scale: 0.8;
+    transform: translateX(-16%);
+    }
+
+    .nubes-derecha {
+    right: 5vw;
+    top: 15%;
+    scale: 0.8;
+    transform: translateX(15%) scaleX(-1);
+    }
 }
 
 /* Ajustes para pantallas más pequeñas */
 @media (max-width: 768px) {
     #barra-superior {
         padding: 8px 10px;
+    }
+
+    #barra-secundaria {
+        top: 12vh;
+        padding: 8px 10px;
+        width: 84vw;
+        max-width: 84vw;
     }
     
     .icono-barra {

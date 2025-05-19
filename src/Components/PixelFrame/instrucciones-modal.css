@@ -12,24 +12,7 @@
   align-items: center;
   justify-content: center;
   z-index: 2000;
-  opacity: 0;
-  transform: scale(1.5);
   image-rendering: pixelated;
-}
-
-.instrucciones-modal.entrar {
-  animation: modal-entrada 0.3s forwards;
-}
-
-@keyframes modal-entrada {
-  0% {
-    opacity: 0;
-    transform: scale(1.5);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
 }
 
 .instrucciones-modal.salir {
@@ -66,14 +49,14 @@
 
 .instrucciones-contenido h1 {
   color: #f0c040;
-  text-shadow: 4px 4px #b18200a9;
+  text-shadow: 3px 3px #b18200a9;
   margin-bottom: 1rem;
   font-size: 1.4rem;
 }
 
 .instrucciones-contenido h2 {
   color: #ff6600;
-  text-shadow: 4px 4px #803e00;
+  text-shadow: 3px 3px #803e00;
   margin-bottom: 1.5rem;
   font-size: 1.2rem;
 }
@@ -81,7 +64,7 @@
 .instrucciones-contenido p {
   margin: 1rem 0;
   color: #ffffff;
-  text-shadow: 2px 2px #1d3f11;
+  text-shadow: 3px 3px #1d3f11;
   font-size: 0.9rem;
 }
 

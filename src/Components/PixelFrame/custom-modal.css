@@ -62,13 +62,13 @@
 .recompensa-contenido h2 {
   margin-bottom: 1.5rem;
   font-size: 1.2rem;
-  text-shadow: 4px 4px #1d3f11;
+  text-shadow: 3px 3px #1d3f11;
 }
 
 .recompensa-contenido p {
   margin: 1.5rem 0;
   color: #ffffff;
-  text-shadow: 4px 4px #1d3f11;
+  text-shadow: 3px 3px #1d3f11;
   font-size: 0.9rem;
 }
 
@@ -82,6 +82,7 @@
 .recompensa-contenido button {
   margin-top: 1.5rem;
   padding: 0.8rem 1.6rem;
+  color: black;
   background-color: #f0c040;
   text-shadow: 3px 3px #b18200a9;
   box-shadow: 0 0 10px rgba(63, 136, 37, 0.5);
